@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Millainen sää on nyt?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand">
+        <img src="img/saalogo.png" width="100" height="100" class="d-inline-block align-top" alt="">
+          
+    </span>
+    
+        <form class="form-inline" method="POST" action="/haku">
+          <input class="form-control mr-sm-2" type="text" name="hakusana" id="hakusana" placeholder="Kaupunki" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Hae</button>
+        </form>
+        <span><a href="/tallenna">Aseta oletus kaupunki</a></span>
+      </nav>
+    </div><br>
+
+    <div class="container">
+            <div class="jumbotron">
+
+            <% if(weather.kaupunki) { %>
+            
+                    <h1 class="display-5">Sää paikkakunnalla <%=weather.kaupunki%><img src="<%=weather.ikoni%>" class="mr-"></h1>
+                    <div class="row">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lämpötila on <%=weather.lampo%>&deg;C ja ulkona näyttäisi olevan&nbsp;<i><%=weather.desc%></i>.<br><br>
+                   <%if (weather.lampo < 0) {%>
+                   &nbsp;&nbsp;&nbsp;&nbsp;<b> Ulkona on pakkasta! Laita pipo päähän.</b>
+                    <%}%></p>
+
+                    <%} else {%>
+                    <h1 class="display-5">Hae paikkakunnan sää</h1>
+                    <%}%>
+                </div>
+            
+                    
+                
+                  </div>
+
+    </div>
+
+
+
+</body>
+
+</html

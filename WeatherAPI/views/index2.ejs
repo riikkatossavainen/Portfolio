@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Millainen sää on nyt?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand">
+        <img src="img/saalogo.png" width="100" height="100" class="d-inline-block align-top" alt="">
+          
+    </span>
+
+       
+
+
+        
+      </nav>
+<br><br><br>
+      <div class="container">
+      <h3>Aseta oletus kaupunki</h3>
+      <p>Tämän kaupungin säätiedot näytetään oletuksena kun aloitat ohjelman. Voit myös vaihtaa oletusta ja poistaa sen. </p>
+      <form class="form-inline" method="POST" action="/tallennaoletus">
+      <input class="form-control mr-sm-2" type="text" name="oletus" id="oletus" placeholder="Kaupunki" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tallenna</button>
+    </form>
+
+    <br>
+
+
+    <p>Oletus kaupunkisi on : <%=oletus.kaupunki%></p>
+
+    <br>
+    <p>Haluatko poistaa oletuksen? 
+    <form class="form-inline" method="POST" action="/poistaoletus">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Poista</button>
+    </form>
+    <br><br>
+    <span><a href="/">Palaa takaisin etusivulle</a></span>
+    
+    </div>
+    </div><br>
+
+    
+
+
+
+
+</body>
+
+</html
