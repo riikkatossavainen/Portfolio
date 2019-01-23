@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Riikan Keskustelupalsta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://cdn.ckeditor.com/4.11.1/basic/ckeditor.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+
+    <h1>Riikan Keskustelupalsta</h1>
+
+    <h2 class="mb-3">Kirjoita uusi</h2>
+
+    <form method="POST" action="/uusiposti" enctype="application/x-www-form-urlencoded
+    ">
+    
+    <div class="form-group">
+    <label for="nimi">Nimimerkki:</label><br>
+    <input type="text" name="nimi" id="nimi" value="Anonyymi">
+    </div>
+
+    <div class="form-group">
+    <label for="otsikko">Otsikko</label><br>
+    <input type="text" name="otsikko" id="otsikko" value="">
+    </div>
+
+    <textarea name="teksti" id="teksti"></textarea>
+		<script>
+			CKEDITOR.replace( 'teksti' );
+        </script><br>
+
+<input type="submit" class="btn btn-primary" name="laheta" value="Lähetä">
+
+
+        </form>
+        
+        <a href="/">Takaisin</a>
+
+
+    </div>
+
+
+
+</body>
+</html>

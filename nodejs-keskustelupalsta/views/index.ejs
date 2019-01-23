@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Riikan Keskustelupalsta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+
+    <h1>Riikan Keskustelupalsta</h1>
+
+    <h2 class="mb-3">Jutelkaa mistä haluatte</h2>
+
+
+    <a href="/kirjoita" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Kirjoita palstalle</a><br><br>
+
+
+    <table class="table table-hover">
+       
+    
+    <% postaukset.forEach((postaus) => { %>
+
+        <% 
+var lukumaara = 0;
+
+viestit.forEach((viesti) =>  {
+    if (postaus.id == viesti.keskusteluID) {
+        lukumaara = viesti.luku;
+
+        return lukumaara;
+    }
+
+});
+%>
+
+
+ <thead class="thead-light">
+        <tr>
+            
+                
+            <th colspan="4">Kirjoittanut: 
+                <% if (postaus.nimi.length < 1) { %>
+                    <%="Anonyymi"%>
+
+                  <%} else { %>
+                 
+                  <%=postaus.nimi%> 
+                  
+                  <% }; %>
+            
+            </th>
+           
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td colspan="2">
+            <p>
+                    <a href="/postaus/<%=postaus.id%>"><%=postaus.otsikko%>  </a>
+            </p>
+        </td>
+        <td><%=postaus.aika%></td>
+        <td>Vastauksia: ( <%=lukumaara%> )</td>
+        </tr>
+
+    <% }); %>
+
+        </tbody>
+    </table>
+
+    </div>
+
+</body>
+</html>

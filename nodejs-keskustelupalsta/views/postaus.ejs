@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Riikan Keskustelupalsta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://cdn.ckeditor.com/4.11.1/basic/ckeditor.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+
+    <h1>Riikan Keskustelupalsta</h1>
+
+    <h2 class="mb-3">Jutelkaa mistä haluatte</h2>
+
+    <table class="table table-hover">
+
+
+ <thead class="thead-light">
+        <tr>
+            
+            <th colspan="3">Kirjoittanut: 
+                <% if (postaukset.nimi.length < 1) { %>
+                    <%="Anonyymi"%>
+
+                  <%} else { %>
+                 
+                  <%=postaukset.nimi%>
+                  
+                  <% }; %>
+            
+            </th>
+           
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td colspan="2">
+            <h3>
+                    <%=postaukset.otsikko%> 
+            </h3>
+        </td>
+        <td><%=postaukset.aika%></td>
+        </tr>
+
+        <tr>
+                <td colspan="3">
+                        <p>
+                                <%- postaukset.teksti%> 
+                        </p>
+                    </td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
+
+
+    <table class="table table-hover">
+       
+    
+        <% vastaus.forEach((vastaus) => { %>
+    
+    
+     <thead class="thead-light">
+            <tr>
+                
+                    
+                <th colspan="3">Kirjoittanut: 
+                    <% if (vastaus.nimi.length < 1) { %>
+                        <%="Anonyymi"%>
+    
+                      <%} else { %>
+                     
+                      <%=vastaus.nimi%>
+                      
+                      <% }; %>
+                
+                </th>
+                <th colspan="1">
+                        <%=vastaus.aika%>
+
+                </th>
+               
+    
+    
+            </tr>
+        </thead>
+        <tbody>
+
+                <tr>
+                        <td colspan="1">
+                     
+                    <td><%- vastaus.teksti%></td>
+                    </tr>
+    
+      
+        <% }); %>
+    
+            </tbody>
+        </table>
+    
+
+   
+
+<br>
+<h3>Vastaa ketjuun</h3>
+    <form method="POST" action="/vastaus" enctype="application/x-www-form-urlencoded
+    ">
+    
+    <div class="form-group">
+    <label for="nimivastaus">Nimimerkki:</label><br>
+    <input type="text" name="nimivastaus" id="nimivastaus" value="Anonyymi">
+    </div>
+
+    <textarea name="vastaus" id="vastaus"></textarea>
+		<script>
+			CKEDITOR.replace( 'vastaus' );
+        </script><br>
+
+<input type="hidden" name="keskusteluId" value="<%=postaukset.id %>">
+
+<input type="submit" class="btn btn-primary" name="laheta" value="Vastaa">
+
+
+        </form>
+
+    <a href="/">Takaisin</a>
+
+    </div>
+
+</body>
+</html>

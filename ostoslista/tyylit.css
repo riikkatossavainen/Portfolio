@@ -1,0 +1,150 @@
+body {
+
+  font-family: 'Oswald', 'Futura', sans-serif;
+  margin: 0; 
+  padding: 0;}
+
+
+#ohje {
+    width: 25px;
+    padding: 0;
+    height: 25px;
+    float: right;
+    margin: 5px;
+}
+
+#ohjelaatikko {
+    display: none;
+    padding-bottom: 10px;
+}
+
+#ohjelaatikko h3 {
+    color: #fff;
+}
+
+#ohjelaatikko p {
+    color: #1f1f1f;
+}
+
+#content {
+  background-color: #009933;
+  margin: 0 auto 0 auto;
+  position: relative;
+  text-align: center;
+  max-width: 480px;
+ }
+
+
+
+h2 {
+    color: #fff;
+    font-size: 32px;
+    margin-left: 30px;
+    padding-top: 20px;
+}
+
+
+ul {
+  border:none;
+  padding: 0;
+  margin: 0;
+  }
+
+li {
+  background-color: #ffffa5;
+  color: #20f;
+  border-top: 1px solid #fe9772;
+  border-bottom: 1px solid #9f593f;
+  font-size: 24px;
+  letter-spacing: .05em;
+  list-style-type: none;
+  font-weight: bold;
+  text-align: left;
+  height: 50px;
+  padding-left: 1em;
+  padding-top: 10px;
+  }
+
+input {
+  border: 1px solid #ccc;
+  /* Safari 5, Chrome support border-radius without vendor prefix.
+   * FF 3.0/3.5/3.6, Mobile Safari 4.0.4 require vendor prefix.
+   * No support in Safari 3/4, IE 6/7/8, Opera 10.0.
+   */
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  
+  /* Chrome, FF 4.0 support box-shadow without vendor prefix.
+   * Safari 3/4/5 and FF 3.5/3.6 require vendor prefix.
+   * No support in FF 3.0, IE 6/7/8, Opera 10.0, iPhone 3.
+   * change the offsets, blur and color to suit your design.
+   */
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  box-shadow: 2px 2px 3px #666;
+  
+  /* using a bigger font for demo purposes so the box isn't too small */
+  font-size: 20px;
+  
+  /* with a big radius/font there needs to be padding left and right
+   * otherwise the text is too close to the radius.
+   * on a smaller radius/font it may not be necessary
+   */
+  padding: 4px 7px;
+  
+  /* only needed for webkit browsers which show a rectangular outline;
+   * others do not do outline when radius used.
+   * android browser still displays a big outline
+   */
+  outline: 0;
+
+  /* this is needed for iOS devices otherwise a shadow/line appears at the
+   * top of the input. depending on the ratio of radius to height it will
+   * go all the way across the full width of the input and look really messy.
+   * ensure the radius is no more than half the full height of the input, 
+   * and the following is set, and everything will render well in iOS.
+   */
+  -webkit-appearance: none;
+  
+}
+
+input.rounded:focus {
+  
+  /* supported IE8+ and all other browsers tested.
+   * optional, but gives the input focues when selected.
+   * change to a color that suits your design.
+   */
+  border-color: #339933;
+  
+}
+button {
+
+  display: inline-block;
+  padding: 6px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: orange;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 15px #666;
+  box-shadow: 2px 2px 3px #666;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
